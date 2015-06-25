@@ -12,6 +12,6 @@ export class systemComponentLibrary
 {
     getComponent(name)
     {
-        return System.get(name);
+        return System['import'](name);
     }
 }

@@ -7,6 +7,6 @@ export class baseComponent
 
     constructor()
     {
-        this.componentConfigurationSaver = new serviceLocator.getServices()["componentConfigurationSaver"];
+        this.componentConfigurationSaver = new serviceLocator().getServices()["componentConfigurationSaver"];
     }
 }

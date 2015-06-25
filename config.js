@@ -15,11 +15,10 @@ System.config({
 
 System.config({
   "map": {
-    "BeIntrepid/dash-core": "github:BeIntrepid/dash-core@0.0.1",
     "babel": "npm:babel-core@5.5.6",
     "babel-runtime": "npm:babel-runtime@5.5.6",
+    "beintrepid/dash-core": "github:beintrepid/dash-core@0.0.1",
     "core-js": "npm:core-js@0.9.15",
-    "dash-core": "github:BeIntrepid/dash-core@0.0.1",
     "gulp": "npm:gulp@3.9.0",
     "require-dir": "npm:require-dir@0.3.0",
     "run-sequence": "npm:run-sequence@1.1.0",

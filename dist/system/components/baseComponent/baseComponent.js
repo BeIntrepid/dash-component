@@ -16,7 +16,7 @@ System.register(["dash-core"], function (_export) {
                 this.ConfigurationProperties = {};
                 this.LayoutInfo = null;
 
-                this.componentConfigurationSaver = new serviceLocator.getServices()["componentConfigurationSaver"];
+                this.componentConfigurationSaver = new serviceLocator().getServices()["componentConfigurationSaver"];
             };
 
             _export("baseComponent", baseComponent);

@@ -1,11 +1,11 @@
 System.register([], function (_export) {
-    "use strict";
+    'use strict';
 
     var componentLibrary, systemComponentLibrary;
 
-    var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+    var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
     return {
         setters: [],
@@ -20,7 +20,7 @@ System.register([], function (_export) {
                 };
 
                 _createClass(componentLibrary, null, [{
-                    key: "components",
+                    key: 'components',
                     value: {},
                     enumerable: true
                 }]);
@@ -28,7 +28,7 @@ System.register([], function (_export) {
                 return componentLibrary;
             })();
 
-            _export("componentLibrary", componentLibrary);
+            _export('componentLibrary', componentLibrary);
 
             systemComponentLibrary = (function () {
                 function systemComponentLibrary() {
@@ -36,13 +36,13 @@ System.register([], function (_export) {
                 }
 
                 systemComponentLibrary.prototype.getComponent = function getComponent(name) {
-                    return System.get(name);
+                    return System['import'](name);
                 };
 
                 return systemComponentLibrary;
             })();
 
-            _export("systemComponentLibrary", systemComponentLibrary);
+            _export('systemComponentLibrary', systemComponentLibrary);
         }
     };
 });
