@@ -5,3 +5,7 @@ export {componentLoader} from './componentLoader'
 export {componentModelLoader} from './componentModelLoader'
 
 export {baseComponent} from './components/baseComponent/baseComponent'
+
+export function configure(aurelia){
+    aurelia.globalizeResources('./components/baseComponent');
+}
