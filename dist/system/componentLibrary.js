@@ -16,7 +16,7 @@ System.register([], function (_export) {
                 }
 
                 componentLibrary.prototype.getComponent = function getComponent(name) {
-                    return componentLibrary.components[name];
+                    return Promise.resolve(componentLibrary.components[name]);
                 };
 
                 _createClass(componentLibrary, null, [{

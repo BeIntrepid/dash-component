@@ -1,4 +1,4 @@
-System.register(['./componentLibrary', './componentLoader', './components/baseComponent/baseComponent'], function (_export) {
+System.register(['./componentLibrary', './componentLoader', './componentModelLoader', './components/baseComponent/baseComponent'], function (_export) {
   'use strict';
 
   return {
@@ -6,6 +6,8 @@ System.register(['./componentLibrary', './componentLoader', './components/baseCo
       _export('componentLibrary', _componentLibrary.componentLibrary);
     }, function (_componentLoader) {
       _export('componentLoader', _componentLoader.componentLoader);
+    }, function (_componentModelLoader) {
+      _export('componentModelLoader', _componentModelLoader.componentModelLoader);
     }, function (_componentsBaseComponentBaseComponent) {
       _export('baseComponent', _componentsBaseComponentBaseComponent.baseComponent);
     }],

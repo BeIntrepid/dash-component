@@ -2,4 +2,6 @@
 
 export {componentLibrary} from './componentLibrary'
 export {componentLoader} from './componentLoader'
+export {componentModelLoader} from './componentModelLoader'
+
 export {baseComponent} from './components/baseComponent/baseComponent'

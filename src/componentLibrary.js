@@ -4,7 +4,7 @@ export class componentLibrary
 
     getComponent(name)
     {
-        return componentLibrary.components[name];
+        return Promise.resolve(componentLibrary.components[name]);
     }
 }
 
