@@ -12,6 +12,11 @@ export class componentLoader
         return this.library.getComponent(name);
     }
 
+    wrapComponentInChrome(innerComponent)
+    {
+        return {viewModel:serviceLocator.services.chromeComponentInfo.path, model : innerComponent};
+    }
+
     loadComponentsForCompose(componentList)
     {
         var p = new Promise((res,rej)=> {
@@ -22,7 +27,7 @@ export class componentLoader
                 var composeResult = [];
 
                 modelLoadResult.forEach((m) => {
-                    composeResult.push({viewModel:m.config.viewModel, model : m.model});
+                    composeResult.push(this.wrapComponentInChrome({viewModel:m.config.viewModel, model : m.model}));
                 });
 
                 res(composeResult);

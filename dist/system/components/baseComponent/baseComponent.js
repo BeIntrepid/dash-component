@@ -10,14 +10,22 @@ System.register(["dash-core"], function (_export) {
             serviceLocator = _dashCore.serviceLocator;
         }],
         execute: function () {
-            baseComponent = function baseComponent() {
-                _classCallCheck(this, baseComponent);
+            baseComponent = (function () {
+                function baseComponent() {
+                    _classCallCheck(this, baseComponent);
 
-                this.ConfigurationProperties = {};
-                this.LayoutInfo = null;
+                    this.ConfigurationProperties = {};
+                    this.LayoutInfo = null;
 
-                this.componentConfigurationSaver = new serviceLocator().getServices()["componentConfigurationSaver"];
-            };
+                    this.componentConfigurationSaver = new serviceLocator().getServices()["componentConfigurationSaver"];
+                }
+
+                baseComponent.prototype.activate = function activate(model) {
+                    this.model = model;
+                };
+
+                return baseComponent;
+            })();
 
             _export("baseComponent", baseComponent);
         }

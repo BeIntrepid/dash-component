@@ -10,9 +10,17 @@ System.register(['dash-core'], function (_export) {
             serviceLocator = _dashCore.serviceLocator;
         }],
         execute: function () {
-            chromeComponent = function chromeComponent() {
-                _classCallCheck(this, chromeComponent);
-            };
+            chromeComponent = (function () {
+                function chromeComponent() {
+                    _classCallCheck(this, chromeComponent);
+                }
+
+                chromeComponent.prototype.activate = function activate(model) {
+                    this.model = model;
+                };
+
+                return chromeComponent;
+            })();
 
             _export('chromeComponent', chromeComponent);
         }

@@ -24,7 +24,13 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                     return this.library.getComponent(name);
                 };
 
+                componentLoader.prototype.wrapComponentInChrome = function wrapComponentInChrome(innerComponent) {
+                    return { viewModel: serviceLocator.services.chromeComponentInfo.path, model: innerComponent };
+                };
+
                 componentLoader.prototype.loadComponentsForCompose = function loadComponentsForCompose(componentList) {
+                    var _this = this;
+
                     var p = new Promise(function (res, rej) {
 
                         var modelLoader = serviceLocator.services.componentModelLoader;
@@ -33,7 +39,7 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                             var composeResult = [];
 
                             modelLoadResult.forEach(function (m) {
-                                composeResult.push({ viewModel: m.config.viewModel, model: m.model });
+                                composeResult.push(_this.wrapComponentInChrome({ viewModel: m.config.viewModel, model: m.model }));
                             });
 
                             res(composeResult);
@@ -44,11 +50,11 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                 };
 
                 componentLoader.prototype.loadComponent = function loadComponent(componentConfig) {
-                    var _this = this;
+                    var _this2 = this;
 
                     var p = new Promise(function (res, rej) {
 
-                        _this.library.getComponent(componentConfig.type).then(function (module) {
+                        _this2.library.getComponent(componentConfig.type).then(function (module) {
                             var component = new module[componentConfig.name]();
                             res(component);
                         });

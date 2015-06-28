@@ -13,6 +13,8 @@ export function configure(aurelia){
 import {serviceLocator} from 'dash-core'
 import {componentLoader} from './componentLoader'
 import {componentModelLoader} from './componentModelLoader'
+import {chromeComponentInfo} from './chromeComponentInfo'
 
 serviceLocator.services.componentLoader = new componentLoader();
 serviceLocator.services.componentModelLoader = new componentModelLoader();
+serviceLocator.services.chromeComponentInfo = new chromeComponentInfo();

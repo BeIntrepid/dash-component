@@ -1,7 +1,7 @@
-System.register(['dash-core', './componentLoader', './componentModelLoader', './componentLibrary', './components/baseComponent/baseComponent', './components/chromeComponent/chromeComponent'], function (_export) {
+System.register(['dash-core', './componentLoader', './componentModelLoader', './chromeComponentInfo', './componentLibrary', './components/baseComponent/baseComponent', './components/chromeComponent/chromeComponent'], function (_export) {
     'use strict';
 
-    var serviceLocator, componentLoader, componentModelLoader;
+    var serviceLocator, componentLoader, componentModelLoader, chromeComponentInfo;
 
     _export('configure', configure);
 
@@ -18,6 +18,8 @@ System.register(['dash-core', './componentLoader', './componentModelLoader', './
             componentModelLoader = _componentModelLoader.componentModelLoader;
 
             _export('componentModelLoader', _componentModelLoader.componentModelLoader);
+        }, function (_chromeComponentInfo) {
+            chromeComponentInfo = _chromeComponentInfo.chromeComponentInfo;
         }, function (_componentLibrary) {
             _export('componentLibrary', _componentLibrary.componentLibrary);
         }, function (_componentsBaseComponentBaseComponent) {
@@ -29,6 +31,7 @@ System.register(['dash-core', './componentLoader', './componentModelLoader', './
 
             serviceLocator.services.componentLoader = new componentLoader();
             serviceLocator.services.componentModelLoader = new componentModelLoader();
+            serviceLocator.services.chromeComponentInfo = new chromeComponentInfo();
         }
     };
 });

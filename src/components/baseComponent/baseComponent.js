@@ -9,4 +9,9 @@ export class baseComponent
     {
         this.componentConfigurationSaver = new serviceLocator().getServices()["componentConfigurationSaver"];
     }
+
+    activate(model)
+    {
+        this.model = model;
+    }
 }

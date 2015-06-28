@@ -5,4 +5,9 @@ export class chromeComponent
     constructor()
     {
     }
+
+    activate(model)
+    {
+        this.model = model;
+    }
 }
