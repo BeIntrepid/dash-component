@@ -1,6 +1,8 @@
 <template>
-    I'm a layout !
+    <div class="floatLayout">
+    <div>I'm a layout !</div>
         <compose repeat.for="component of components" model.bind="component.model"
                  view-model="${component.viewModel}">
         </compose>
+    </div>
 </template>

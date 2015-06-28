@@ -1,7 +1,7 @@
-System.register(['dash-core', '../../layouts/baseLayout/baseLayout'], function (_export) {
+System.register(['dash-core', '../../layouts/baseLayout/baseLayout', '../../styles/dash-Component.css!css'], function (_export) {
     'use strict';
 
-    var serviceLocator, baseLayout, floatLayout;
+    var serviceLocator, baseLayout, componentcss, floatLayout;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
@@ -12,6 +12,8 @@ System.register(['dash-core', '../../layouts/baseLayout/baseLayout'], function (
             serviceLocator = _dashCore.serviceLocator;
         }, function (_layoutsBaseLayoutBaseLayout) {
             baseLayout = _layoutsBaseLayoutBaseLayout.baseLayout;
+        }, function (_stylesDashComponentCssCss) {
+            componentcss = _stylesDashComponentCssCss.componentcss;
         }],
         execute: function () {
             floatLayout = (function (_baseLayout) {

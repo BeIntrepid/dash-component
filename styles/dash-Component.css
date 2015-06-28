@@ -1,0 +1,15 @@
+.floatLayout
+{
+
+}
+
+.floatLayout .chromeComponent{
+
+    border: solid blue 1px;
+    border-radius: 10px;
+
+    margin: 10px;
+    width:100px;
+    height:100px;
+    float:left;
+}
