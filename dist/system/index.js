@@ -1,4 +1,4 @@
-System.register(['dash-core', './componentLoader', './componentModelLoader', './chromeComponentInfo', './componentLibrary', './components/baseComponent/baseComponent', './components/chromeComponent/chromeComponent'], function (_export) {
+System.register(['dash-core', './componentLoader', './componentModelLoader', './chromeComponentInfo', './componentLibrary', './components/baseComponent/baseComponent', './components/chromeComponent/chromeComponent', './layouts/baseLayout/baseLayout', './layouts/floatLayout/floatLayout'], function (_export) {
     'use strict';
 
     var serviceLocator, componentLoader, componentModelLoader, chromeComponentInfo;
@@ -26,6 +26,10 @@ System.register(['dash-core', './componentLoader', './componentModelLoader', './
             _export('baseComponent', _componentsBaseComponentBaseComponent.baseComponent);
         }, function (_componentsChromeComponentChromeComponent) {
             _export('chromeComponent', _componentsChromeComponentChromeComponent.chromeComponent);
+        }, function (_layoutsBaseLayoutBaseLayout) {
+            _export('baseLayout', _layoutsBaseLayoutBaseLayout.baseLayout);
+        }, function (_layoutsFloatLayoutFloatLayout) {
+            _export('floatLayout', _layoutsFloatLayoutFloatLayout.floatLayout);
         }],
         execute: function () {
 

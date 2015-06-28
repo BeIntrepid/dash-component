@@ -3,8 +3,12 @@
 export {componentLibrary} from './componentLibrary'
 export {componentLoader} from './componentLoader'
 export {componentModelLoader} from './componentModelLoader'
+
 export {baseComponent} from './components/baseComponent/baseComponent'
 export {chromeComponent} from './components/chromeComponent/chromeComponent'
+
+export {baseLayout} from './layouts/baseLayout/baseLayout'
+export {floatLayout} from './layouts/floatLayout/floatLayout'
 
 export function configure(aurelia){
     //aurelia.globalizeResources('./components/baseComponent/baseComponent');
