@@ -25,7 +25,6 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                 };
 
                 componentLoader.prototype.loadComponentsForCompose = function loadComponentsForCompose(componentList) {
-
                     var p = new Promise(function (res, rej) {
 
                         var modelLoader = serviceLocator.services.componentModelLoader;

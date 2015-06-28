@@ -14,7 +14,6 @@ export class componentLoader
 
     loadComponentsForCompose(componentList)
     {
-
         var p = new Promise((res,rej)=> {
 
             var modelLoader = serviceLocator.services.componentModelLoader;
