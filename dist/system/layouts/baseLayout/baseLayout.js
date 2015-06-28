@@ -23,7 +23,7 @@ System.register(['dash-core'], function (_export) {
                     this.dataContext = dataContext;
 
                     var modelLoader = serviceLocator.services.componentLoader;
-                    var componentPromise = modelLoader.loadComponentsForCompose(dataContext.componentsForCompose).then(function (c) {
+                    modelLoader.loadComponentsForCompose(this.dataContext.componentsForCompose).then(function (c) {
                         c.forEach(function (com) {
                             _this.components.push(com);
                         });

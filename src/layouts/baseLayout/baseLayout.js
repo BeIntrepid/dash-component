@@ -14,12 +14,11 @@ export class baseLayout
         this.dataContext = dataContext;
 
         var modelLoader =  serviceLocator.services.componentLoader;
-        var componentPromise = modelLoader
-            .loadComponentsForCompose(dataContext.componentsForCompose)
-            .then((c)=>{
-                c.forEach((com)=> {
-                    this.components.push(com);
-                });
-            });
+        modelLoader.loadComponentsForCompose(this.dataContext.componentsForCompose)
+                    .then((c)=>{
+                        c.forEach((com)=> {
+                            this.components.push(com);
+                        });
+                    });
     }
 }

@@ -2,8 +2,8 @@ import {serviceLocator} from 'dash-core'
 
 export class baseComponent
 {
-    ConfigurationProperties = {};
-    LayoutInfo = null;
+    configurationProperties = {};
+    layoutInfo = null;
 
     constructor()
     {
