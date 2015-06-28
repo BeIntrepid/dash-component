@@ -1,15 +1,12 @@
-.floatLayout
+.chromeComponent
 {
-
+    box-shadow: 1px 1px 10px lightskyblue;
+    position: relative;
 }
 
-.floatLayout .chromeComponent{
-
-    border: solid blue 1px;
-    border-radius: 10px;
-
-    margin: 10px;
-    width:100px;
-    height:100px;
-    float:left;
+.chromeComponent .configureComponent
+{
+    position: absolute;
+    right: 0px;
+    background-color: lightskyblue;
 }

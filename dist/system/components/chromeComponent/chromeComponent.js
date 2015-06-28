@@ -1,13 +1,15 @@
-System.register(['dash-core'], function (_export) {
+System.register(['dash-core', '../../styles/dash-Component.css!css'], function (_export) {
     'use strict';
 
-    var serviceLocator, chromeComponent;
+    var serviceLocator, dashComponentCss, chromeComponent;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
     return {
         setters: [function (_dashCore) {
             serviceLocator = _dashCore.serviceLocator;
+        }, function (_stylesDashComponentCssCss) {
+            dashComponentCss = _stylesDashComponentCssCss.dashComponentCss;
         }],
         execute: function () {
             chromeComponent = (function () {
