@@ -1,5 +1,4 @@
 import {componentLibrary} from './componentLibrary'
-import {systemComponentLibrary} from './componentLibrary'
 import {serviceLocator} from 'dash-core'
 
 

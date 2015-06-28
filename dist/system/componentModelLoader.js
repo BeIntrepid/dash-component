@@ -1,14 +1,13 @@
 System.register(['./componentLibrary', 'dash-core'], function (_export) {
     'use strict';
 
-    var componentLibrary, systemComponentLibrary, serviceLocator, componentModelLoader;
+    var componentLibrary, serviceLocator, componentModelLoader;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
     return {
         setters: [function (_componentLibrary) {
             componentLibrary = _componentLibrary.componentLibrary;
-            systemComponentLibrary = _componentLibrary.systemComponentLibrary;
         }, function (_dashCore) {
             serviceLocator = _dashCore.serviceLocator;
         }],
