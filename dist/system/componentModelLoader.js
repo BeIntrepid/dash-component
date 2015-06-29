@@ -1,25 +1,25 @@
 System.register(['./componentLibrary', 'dash-core'], function (_export) {
     'use strict';
 
-    var componentLibrary, serviceLocator, componentModelLoader;
+    var ComponentLibrary, ServiceLocator, ComponentModelLoader;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
     return {
         setters: [function (_componentLibrary) {
-            componentLibrary = _componentLibrary.componentLibrary;
+            ComponentLibrary = _componentLibrary.ComponentLibrary;
         }, function (_dashCore) {
-            serviceLocator = _dashCore.serviceLocator;
+            ServiceLocator = _dashCore.ServiceLocator;
         }],
         execute: function () {
-            componentModelLoader = (function () {
-                function componentModelLoader() {
-                    _classCallCheck(this, componentModelLoader);
+            ComponentModelLoader = (function () {
+                function ComponentModelLoader() {
+                    _classCallCheck(this, ComponentModelLoader);
 
                     this.models = {};
                 }
 
-                componentModelLoader.prototype.loadComponentModel = function loadComponentModel(componentConfig) {
+                ComponentModelLoader.prototype.loadComponentModel = function loadComponentModel(componentConfig) {
                     var p = new Promise(function (res, rej) {
                         res(models[componentConfig.id]);
                     });
@@ -27,7 +27,7 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                     return p;
                 };
 
-                componentModelLoader.prototype.loadComponentModels = function loadComponentModels(componentConfigs) {
+                ComponentModelLoader.prototype.loadComponentModels = function loadComponentModels(componentConfigs) {
                     var _this = this;
 
                     var p = new Promise(function (res, rej) {
@@ -43,10 +43,10 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                     return p;
                 };
 
-                return componentModelLoader;
+                return ComponentModelLoader;
             })();
 
-            _export('componentModelLoader', componentModelLoader);
+            _export('ComponentModelLoader', ComponentModelLoader);
         }
     };
 });

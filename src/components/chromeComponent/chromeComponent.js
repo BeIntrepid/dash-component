@@ -1,7 +1,7 @@
-import {serviceLocator} from 'dash-core'
-import {dashComponentCss} from '../../styles/dash-Component.css!css'
+import {ServiceLocator} from 'dash-core'
+import {DashComponentCss} from '../../styles/dash-Component.css!css'
 
-export class chromeComponent
+export class ChromeComponent
 {
     constructor()
     {

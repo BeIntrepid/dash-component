@@ -1,4 +1,4 @@
-export class componentLibrary
+export class ComponentLibrary
 {
     static collections = {};
 

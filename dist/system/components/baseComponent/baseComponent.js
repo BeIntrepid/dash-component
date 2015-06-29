@@ -1,33 +1,33 @@
 System.register(["dash-core"], function (_export) {
     "use strict";
 
-    var serviceLocator, baseComponent;
+    var ServiceLocator, BaseComponent;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
     return {
         setters: [function (_dashCore) {
-            serviceLocator = _dashCore.serviceLocator;
+            ServiceLocator = _dashCore.ServiceLocator;
         }],
         execute: function () {
-            baseComponent = (function () {
-                function baseComponent() {
-                    _classCallCheck(this, baseComponent);
+            BaseComponent = (function () {
+                function BaseComponent() {
+                    _classCallCheck(this, BaseComponent);
 
                     this.configurationProperties = {};
                     this.layoutInfo = null;
 
-                    this.componentConfigurationSaver = new serviceLocator().getServices()["componentConfigurationSaver"];
+                    this.componentConfigurationSaver = new ServiceLocator().getServices()["componentConfigurationSaver"];
                 }
 
-                baseComponent.prototype.activate = function activate(model) {
+                BaseComponent.prototype.activate = function activate(model) {
                     this.model = model;
                 };
 
-                return baseComponent;
+                return BaseComponent;
             })();
 
-            _export("baseComponent", baseComponent);
+            _export("BaseComponent", BaseComponent);
         }
     };
 });

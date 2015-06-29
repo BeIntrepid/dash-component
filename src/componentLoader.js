@@ -1,11 +1,10 @@
-import {componentLibrary} from './componentLibrary'
-import {systemComponentLibrary} from './componentLibrary'
-import {serviceLocator} from 'dash-core'
+import {ComponentLibrary} from './componentLibrary'
+import {ServiceLocator} from 'dash-core'
 
-export class componentLoader
+export class ComponentLoader
 {
 
-    library = new componentLibrary();
+    library = new ComponentLibrary();
 
     getComponent(name)
     {
@@ -14,14 +13,14 @@ export class componentLoader
 
     wrapComponentInChrome(innerComponent)
     {
-        return {viewModel:serviceLocator.services.chromeComponentInfo.path, model : innerComponent};
+        return {viewModel:ServiceLocator.services.chromeComponentInfo.path, model : innerComponent};
     }
 
     loadComponentsForCompose(componentList)
     {
         var p = new Promise((res,rej)=> {
 
-            var modelLoader = serviceLocator.services.componentModelLoader;
+            var modelLoader = ServiceLocator.services.componentModelLoader;
             // Load the models and return them with the view info
             modelLoader.loadComponentModels(componentList).then((modelLoadResult)=> {
                 var composeResult = [];

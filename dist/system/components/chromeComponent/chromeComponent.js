@@ -1,30 +1,30 @@
 System.register(['dash-core', '../../styles/dash-Component.css!css'], function (_export) {
     'use strict';
 
-    var serviceLocator, dashComponentCss, chromeComponent;
+    var ServiceLocator, DashComponentCss, ChromeComponent;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
     return {
         setters: [function (_dashCore) {
-            serviceLocator = _dashCore.serviceLocator;
+            ServiceLocator = _dashCore.ServiceLocator;
         }, function (_stylesDashComponentCssCss) {
-            dashComponentCss = _stylesDashComponentCssCss.dashComponentCss;
+            DashComponentCss = _stylesDashComponentCssCss.DashComponentCss;
         }],
         execute: function () {
-            chromeComponent = (function () {
-                function chromeComponent() {
-                    _classCallCheck(this, chromeComponent);
+            ChromeComponent = (function () {
+                function ChromeComponent() {
+                    _classCallCheck(this, ChromeComponent);
                 }
 
-                chromeComponent.prototype.activate = function activate(model) {
+                ChromeComponent.prototype.activate = function activate(model) {
                     this.model = model;
                 };
 
-                return chromeComponent;
+                return ChromeComponent;
             })();
 
-            _export('chromeComponent', chromeComponent);
+            _export('ChromeComponent', ChromeComponent);
         }
     };
 });

@@ -1,9 +1,9 @@
-import {serviceLocator} from 'dash-core'
-import {baseLayout} from '../../layouts/baseLayout/baseLayout'
-import {componentcss} from '../../styles/dash-Component.css!css'
-import {floatLayoutCss} from '../../styles/floatLayout.css!css'
+import {ServiceLocator} from 'dash-core'
+import {BaseLayout} from '../../layouts/baseLayout/baseLayout'
+import {Componentcss} from '../../styles/dash-Component.css!css'
+import {FloatLayoutCss} from '../../styles/floatLayout.css!css'
 
-export class floatLayout extends baseLayout
+export class FloatLayout extends BaseLayout
 {
     constructor()
     {

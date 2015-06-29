@@ -1,28 +1,28 @@
 System.register(['dash-core'], function (_export) {
     'use strict';
 
-    var serviceLocator, baseLayout;
+    var ServiceLocator, BaseLayout;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
     return {
         setters: [function (_dashCore) {
-            serviceLocator = _dashCore.serviceLocator;
+            ServiceLocator = _dashCore.ServiceLocator;
         }],
         execute: function () {
-            baseLayout = (function () {
-                function baseLayout() {
-                    _classCallCheck(this, baseLayout);
+            BaseLayout = (function () {
+                function BaseLayout() {
+                    _classCallCheck(this, BaseLayout);
 
                     this.components = [];
                 }
 
-                baseLayout.prototype.activate = function activate(dataContext) {
+                BaseLayout.prototype.activate = function activate(dataContext) {
                     var _this = this;
 
                     this.dataContext = dataContext;
 
-                    var modelLoader = serviceLocator.services.componentLoader;
+                    var modelLoader = ServiceLocator.services.componentLoader;
                     modelLoader.loadComponentsForCompose(this.dataContext.componentsForCompose).then(function (c) {
                         c.forEach(function (com) {
                             _this.components.push(com);
@@ -30,10 +30,10 @@ System.register(['dash-core'], function (_export) {
                     });
                 };
 
-                return baseLayout;
+                return BaseLayout;
             })();
 
-            _export('baseLayout', baseLayout);
+            _export('BaseLayout', BaseLayout);
         }
     };
 });

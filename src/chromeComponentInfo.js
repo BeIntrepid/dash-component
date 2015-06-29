@@ -1,4 +1,4 @@
-export class chromeComponentInfo
+export class ChromeComponentInfo
 {
     path = "/components/chromeComponent/chromeComponent";
 }

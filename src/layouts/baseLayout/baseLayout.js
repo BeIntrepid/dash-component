@@ -1,6 +1,6 @@
-import {serviceLocator} from 'dash-core'
+import {ServiceLocator} from 'dash-core'
 
-export class baseLayout
+export class BaseLayout
 {
     components = [];
 
@@ -13,7 +13,7 @@ export class baseLayout
     {
         this.dataContext = dataContext;
 
-        var modelLoader =  serviceLocator.services.componentLoader;
+        var modelLoader =  ServiceLocator.services.componentLoader;
         modelLoader.loadComponentsForCompose(this.dataContext.componentsForCompose)
                     .then((c)=>{
                         c.forEach((com)=> {

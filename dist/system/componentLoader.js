@@ -1,39 +1,38 @@
 System.register(['./componentLibrary', 'dash-core'], function (_export) {
     'use strict';
 
-    var componentLibrary, systemComponentLibrary, serviceLocator, componentLoader;
+    var ComponentLibrary, ServiceLocator, ComponentLoader;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
     return {
         setters: [function (_componentLibrary) {
-            componentLibrary = _componentLibrary.componentLibrary;
-            systemComponentLibrary = _componentLibrary.systemComponentLibrary;
+            ComponentLibrary = _componentLibrary.ComponentLibrary;
         }, function (_dashCore) {
-            serviceLocator = _dashCore.serviceLocator;
+            ServiceLocator = _dashCore.ServiceLocator;
         }],
         execute: function () {
-            componentLoader = (function () {
-                function componentLoader() {
-                    _classCallCheck(this, componentLoader);
+            ComponentLoader = (function () {
+                function ComponentLoader() {
+                    _classCallCheck(this, ComponentLoader);
 
-                    this.library = new componentLibrary();
+                    this.library = new ComponentLibrary();
                 }
 
-                componentLoader.prototype.getComponent = function getComponent(name) {
+                ComponentLoader.prototype.getComponent = function getComponent(name) {
                     return this.library.getComponent(name);
                 };
 
-                componentLoader.prototype.wrapComponentInChrome = function wrapComponentInChrome(innerComponent) {
-                    return { viewModel: serviceLocator.services.chromeComponentInfo.path, model: innerComponent };
+                ComponentLoader.prototype.wrapComponentInChrome = function wrapComponentInChrome(innerComponent) {
+                    return { viewModel: ServiceLocator.services.chromeComponentInfo.path, model: innerComponent };
                 };
 
-                componentLoader.prototype.loadComponentsForCompose = function loadComponentsForCompose(componentList) {
+                ComponentLoader.prototype.loadComponentsForCompose = function loadComponentsForCompose(componentList) {
                     var _this = this;
 
                     var p = new Promise(function (res, rej) {
 
-                        var modelLoader = serviceLocator.services.componentModelLoader;
+                        var modelLoader = ServiceLocator.services.componentModelLoader;
 
                         modelLoader.loadComponentModels(componentList).then(function (modelLoadResult) {
                             var composeResult = [];
@@ -49,7 +48,7 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                     return p;
                 };
 
-                componentLoader.prototype.loadComponent = function loadComponent(componentConfig) {
+                ComponentLoader.prototype.loadComponent = function loadComponent(componentConfig) {
                     var _this2 = this;
 
                     var p = new Promise(function (res, rej) {
@@ -63,10 +62,10 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                     return p;
                 };
 
-                return componentLoader;
+                return ComponentLoader;
             })();
 
-            _export('componentLoader', componentLoader);
+            _export('ComponentLoader', ComponentLoader);
         }
     };
 });

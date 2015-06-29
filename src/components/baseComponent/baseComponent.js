@@ -1,13 +1,13 @@
-import {serviceLocator} from 'dash-core'
+import {ServiceLocator} from 'dash-core'
 
-export class baseComponent
+export class BaseComponent
 {
     configurationProperties = {};
     layoutInfo = null;
 
     constructor()
     {
-        this.componentConfigurationSaver = new serviceLocator().getServices()["componentConfigurationSaver"];
+        this.componentConfigurationSaver = new ServiceLocator().getServices()["componentConfigurationSaver"];
     }
 
     activate(model)

@@ -1,7 +1,7 @@
 System.register(['dash-core', '../../layouts/baseLayout/baseLayout', '../../styles/dash-Component.css!css', '../../styles/floatLayout.css!css'], function (_export) {
     'use strict';
 
-    var serviceLocator, baseLayout, componentcss, floatLayoutCss, floatLayout;
+    var ServiceLocator, BaseLayout, Componentcss, FloatLayoutCss, FloatLayout;
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
@@ -9,32 +9,32 @@ System.register(['dash-core', '../../layouts/baseLayout/baseLayout', '../../styl
 
     return {
         setters: [function (_dashCore) {
-            serviceLocator = _dashCore.serviceLocator;
+            ServiceLocator = _dashCore.ServiceLocator;
         }, function (_layoutsBaseLayoutBaseLayout) {
-            baseLayout = _layoutsBaseLayoutBaseLayout.baseLayout;
+            BaseLayout = _layoutsBaseLayoutBaseLayout.BaseLayout;
         }, function (_stylesDashComponentCssCss) {
-            componentcss = _stylesDashComponentCssCss.componentcss;
+            Componentcss = _stylesDashComponentCssCss.Componentcss;
         }, function (_stylesFloatLayoutCssCss) {
-            floatLayoutCss = _stylesFloatLayoutCssCss.floatLayoutCss;
+            FloatLayoutCss = _stylesFloatLayoutCssCss.FloatLayoutCss;
         }],
         execute: function () {
-            floatLayout = (function (_baseLayout) {
-                function floatLayout() {
-                    _classCallCheck(this, floatLayout);
+            FloatLayout = (function (_BaseLayout) {
+                function FloatLayout() {
+                    _classCallCheck(this, FloatLayout);
 
-                    _baseLayout.call(this);
+                    _BaseLayout.call(this);
                 }
 
-                _inherits(floatLayout, _baseLayout);
+                _inherits(FloatLayout, _BaseLayout);
 
-                floatLayout.prototype.activate = function activate(dataContext) {
-                    _baseLayout.prototype.activate.call(this, dataContext);
+                FloatLayout.prototype.activate = function activate(dataContext) {
+                    _BaseLayout.prototype.activate.call(this, dataContext);
                 };
 
-                return floatLayout;
-            })(baseLayout);
+                return FloatLayout;
+            })(BaseLayout);
 
-            _export('floatLayout', floatLayout);
+            _export('FloatLayout', FloatLayout);
         }
     };
 });

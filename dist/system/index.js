@@ -1,7 +1,7 @@
-System.register(['dash-core', './componentLoader', './componentModelLoader', './chromeComponentInfo', './componentLibrary', './components/baseComponent/baseComponent', './components/chromeComponent/chromeComponent', './layouts/baseLayout/baseLayout', './layouts/floatLayout/floatLayout'], function (_export) {
+System.register(['dash-core', './componentLoader', './componentModelLoader', './chromeComponentInfo', './componentLibrary', './components/baseComponent/BaseComponent', './components/chromeComponent/ChromeComponent', './layouts/baseLayout/baseLayout', './layouts/floatLayout/floatLayout'], function (_export) {
     'use strict';
 
-    var serviceLocator, componentLoader, componentModelLoader, chromeComponentInfo;
+    var ServiceLocator, ComponentLoader, ComponentModelLoader, ChromeComponentInfo;
 
     _export('configure', configure);
 
@@ -9,33 +9,33 @@ System.register(['dash-core', './componentLoader', './componentModelLoader', './
 
     return {
         setters: [function (_dashCore) {
-            serviceLocator = _dashCore.serviceLocator;
+            ServiceLocator = _dashCore.ServiceLocator;
         }, function (_componentLoader) {
-            componentLoader = _componentLoader.componentLoader;
+            ComponentLoader = _componentLoader.ComponentLoader;
 
-            _export('componentLoader', _componentLoader.componentLoader);
+            _export('ComponentLoader', _componentLoader.ComponentLoader);
         }, function (_componentModelLoader) {
-            componentModelLoader = _componentModelLoader.componentModelLoader;
+            ComponentModelLoader = _componentModelLoader.ComponentModelLoader;
 
-            _export('componentModelLoader', _componentModelLoader.componentModelLoader);
+            _export('ComponentModelLoader', _componentModelLoader.ComponentModelLoader);
         }, function (_chromeComponentInfo) {
-            chromeComponentInfo = _chromeComponentInfo.chromeComponentInfo;
+            ChromeComponentInfo = _chromeComponentInfo.ChromeComponentInfo;
         }, function (_componentLibrary) {
-            _export('componentLibrary', _componentLibrary.componentLibrary);
+            _export('ComponentLibrary', _componentLibrary.ComponentLibrary);
         }, function (_componentsBaseComponentBaseComponent) {
-            _export('baseComponent', _componentsBaseComponentBaseComponent.baseComponent);
+            _export('BaseComponent', _componentsBaseComponentBaseComponent.BaseComponent);
         }, function (_componentsChromeComponentChromeComponent) {
-            _export('chromeComponent', _componentsChromeComponentChromeComponent.chromeComponent);
+            _export('ChromeComponent', _componentsChromeComponentChromeComponent.ChromeComponent);
         }, function (_layoutsBaseLayoutBaseLayout) {
-            _export('baseLayout', _layoutsBaseLayoutBaseLayout.baseLayout);
+            _export('BaseLayout', _layoutsBaseLayoutBaseLayout.BaseLayout);
         }, function (_layoutsFloatLayoutFloatLayout) {
-            _export('floatLayout', _layoutsFloatLayoutFloatLayout.floatLayout);
+            _export('FloatLayout', _layoutsFloatLayoutFloatLayout.FloatLayout);
         }],
         execute: function () {
 
-            serviceLocator.services.componentLoader = new componentLoader();
-            serviceLocator.services.componentModelLoader = new componentModelLoader();
-            serviceLocator.services.chromeComponentInfo = new chromeComponentInfo();
+            ServiceLocator.services.componentLoader = new ComponentLoader();
+            ServiceLocator.services.componentModelLoader = new ComponentModelLoader();
+            ServiceLocator.services.chromeComponentInfo = new ChromeComponentInfo();
         }
     };
 });

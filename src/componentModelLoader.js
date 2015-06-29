@@ -1,8 +1,8 @@
-import {componentLibrary} from './componentLibrary'
-import {serviceLocator} from 'dash-core'
+import {ComponentLibrary} from './componentLibrary'
+import {ServiceLocator} from 'dash-core'
 
 
-export class componentModelLoader
+export class ComponentModelLoader
 {
     models = {};
 
