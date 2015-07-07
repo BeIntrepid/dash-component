@@ -16,26 +16,32 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                 function ComponentModelLoader() {
                     _classCallCheck(this, ComponentModelLoader);
 
-                    this.models = {};
+                    this._models = {};
                 }
 
+                ComponentModelLoader.prototype.getModels = function getModels() {
+                    return this._models;
+                };
+
                 ComponentModelLoader.prototype.loadComponentModel = function loadComponentModel(componentConfig) {
+                    var _this = this;
+
                     var p = new Promise(function (res, rej) {
-                        res(models[componentConfig.id]);
+                        res(_this._models[componentConfig.id]);
                     });
 
                     return p;
                 };
 
                 ComponentModelLoader.prototype.loadComponentModels = function loadComponentModels(componentConfigs) {
-                    var _this = this;
+                    var _this2 = this;
 
                     var p = new Promise(function (res, rej) {
 
                         var modelsToReturn = [];
 
                         componentConfigs.forEach(function (c) {
-                            modelsToReturn.push({ config: c, model: _this.models[c.id] });
+                            modelsToReturn.push({ config: c, model: _this2._models[c.id] });
                         });
                         res(modelsToReturn);
                     });

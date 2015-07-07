@@ -4,16 +4,21 @@ import {ServiceLocator} from 'dash-core'
 
 export class ComponentModelLoader
 {
-    models = {};
+    _models = {};
 
     constructor()
     {
     }
 
+    getModels()
+    {
+        return this._models;
+    }
+
     loadComponentModel(componentConfig)
     {
         var p = new Promise((res,rej)=>{
-            res(models[componentConfig.id]);
+            res(this._models[componentConfig.id]);
         });
 
         return p;
@@ -26,7 +31,7 @@ export class ComponentModelLoader
             var modelsToReturn = [];
 
             componentConfigs.forEach((c)=>{
-                modelsToReturn.push({config : c, model : this.models[c.id]} );
+                modelsToReturn.push({config : c, model : this._models[c.id]} );
             });
             res(modelsToReturn);
         });
