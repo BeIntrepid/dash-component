@@ -1,7 +1,7 @@
-System.register(['dash-core', './componentLoader', './componentModelLoader', './chromeComponentInfo', './componentLibrary', './components/baseComponent/BaseComponent', './components/chromeComponent/ChromeComponent', './layouts/baseLayout/baseLayout', './layouts/floatLayout/floatLayout'], function (_export) {
+System.register(['dash-core', './componentLoader', './componentModelLoader', './chromeComponentInfo', './BaseAreaLoader', './componentLibrary', './components/baseComponent/BaseComponent', './components/chromeComponent/ChromeComponent', './layouts/baseLayout/baseLayout', './layouts/floatLayout/floatLayout'], function (_export) {
     'use strict';
 
-    var ServiceLocator, ComponentLoader, ComponentModelLoader, ChromeComponentInfo;
+    var ServiceLocator, ComponentLoader, ComponentModelLoader, ChromeComponentInfo, BaseAreaLoader;
 
     _export('configure', configure);
 
@@ -20,6 +20,10 @@ System.register(['dash-core', './componentLoader', './componentModelLoader', './
             _export('ComponentModelLoader', _componentModelLoader.ComponentModelLoader);
         }, function (_chromeComponentInfo) {
             ChromeComponentInfo = _chromeComponentInfo.ChromeComponentInfo;
+        }, function (_BaseAreaLoader) {
+            BaseAreaLoader = _BaseAreaLoader.BaseAreaLoader;
+
+            _export('BaseAreaLoader', _BaseAreaLoader.BaseAreaLoader);
         }, function (_componentLibrary) {
             _export('ComponentLibrary', _componentLibrary.ComponentLibrary);
         }, function (_componentsBaseComponentBaseComponent) {
@@ -34,6 +38,8 @@ System.register(['dash-core', './componentLoader', './componentModelLoader', './
         execute: function () {
 
             ServiceLocator.services.componentLoader = new ComponentLoader();
+            ServiceLocator.services.areaLoader = new BaseAreaLoader();
+
             ServiceLocator.services.componentModelLoader = new ComponentModelLoader();
             ServiceLocator.services.chromeComponentInfo = new ChromeComponentInfo();
         }

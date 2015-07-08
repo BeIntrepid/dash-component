@@ -48,20 +48,6 @@ System.register(['./componentLibrary', 'dash-core'], function (_export) {
                     return p;
                 };
 
-                ComponentLoader.prototype.loadComponent = function loadComponent(componentConfig) {
-                    var _this2 = this;
-
-                    var p = new Promise(function (res, rej) {
-
-                        _this2.library.getComponent(componentConfig.type).then(function (module) {
-                            var component = new module[componentConfig.name]();
-                            res(component);
-                        });
-                    });
-
-                    return p;
-                };
-
                 return ComponentLoader;
             })();
 

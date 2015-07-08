@@ -9,16 +9,22 @@ export {ChromeComponent} from './components/chromeComponent/ChromeComponent'
 
 export {BaseLayout} from './layouts/baseLayout/baseLayout'
 export {FloatLayout} from './layouts/floatLayout/floatLayout'
+export {BaseAreaLoader} from './BaseAreaLoader'
 
 export function configure(aurelia){
     //aurelia.globalizeResources('./components/baseComponent/baseComponent');
 }
 
 import {ServiceLocator} from 'dash-core'
+
 import {ComponentLoader} from './componentLoader'
 import {ComponentModelLoader} from './componentModelLoader'
 import {ChromeComponentInfo} from './chromeComponentInfo'
+import {BaseAreaLoader} from './BaseAreaLoader'
+
 
 ServiceLocator.services.componentLoader = new ComponentLoader();
+ServiceLocator.services.areaLoader = new BaseAreaLoader();
+
 ServiceLocator.services.componentModelLoader = new ComponentModelLoader();
 ServiceLocator.services.chromeComponentInfo = new ChromeComponentInfo();

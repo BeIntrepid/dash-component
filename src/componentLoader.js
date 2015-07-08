@@ -35,19 +35,4 @@ export class ComponentLoader
 
         return p;
     }
-
-    loadComponent(componentConfig)
-    {
-        var p = new Promise((res,rej)=>{
-
-            this.library.getComponent(componentConfig.type).then((module)=>{
-                var component = new module[componentConfig.name]();
-                res(component);
-            });
-
-        });
-
-        return p;
-
-    }
 }
