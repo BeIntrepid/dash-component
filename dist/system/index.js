@@ -1,4 +1,4 @@
-System.register(['dash-core', './componentLoader', './componentModelLoader', './chromeComponentInfo', './BaseAreaLoader', './componentLibrary', './components/baseComponent/BaseComponent', './components/chromeComponent/ChromeComponent', './layouts/baseLayout/baseLayout', './layouts/floatLayout/floatLayout'], function (_export) {
+System.register(['dash-core', './componentLoader', './componentModelLoader', './chromeComponentInfo', './BaseAreaLoader', './componentLibrary', './components/baseComponent/BaseComponent', './components/chromeComponent/ChromeComponent', './layouts/baseLayout/baseLayout', './layouts/floatLayout/floatLayout', './areas/AreaConfiguration'], function (_export) {
     'use strict';
 
     var ServiceLocator, ComponentLoader, ComponentModelLoader, ChromeComponentInfo, BaseAreaLoader;
@@ -34,6 +34,12 @@ System.register(['dash-core', './componentLoader', './componentModelLoader', './
             _export('BaseLayout', _layoutsBaseLayoutBaseLayout.BaseLayout);
         }, function (_layoutsFloatLayoutFloatLayout) {
             _export('FloatLayout', _layoutsFloatLayoutFloatLayout.FloatLayout);
+        }, function (_areasAreaConfiguration) {
+            _export('AreaConfiguration', _areasAreaConfiguration.AreaConfiguration);
+
+            _export('AreaLayout', _areasAreaConfiguration.AreaLayout);
+
+            _export('LayoutConfiguration', _areasAreaConfiguration.LayoutConfiguration);
         }],
         execute: function () {
 

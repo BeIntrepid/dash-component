@@ -11,6 +11,10 @@ export {BaseLayout} from './layouts/baseLayout/baseLayout'
 export {FloatLayout} from './layouts/floatLayout/floatLayout'
 export {BaseAreaLoader} from './BaseAreaLoader'
 
+export {AreaConfiguration} from './areas/AreaConfiguration'
+export {AreaLayout} from './areas/AreaConfiguration'
+export {LayoutConfiguration} from './areas/AreaConfiguration'
+
 export function configure(aurelia){
     //aurelia.globalizeResources('./components/baseComponent/baseComponent');
 }
