@@ -9,7 +9,7 @@
       "lib": "dist/system"
     },
     "dependencies": {
-      "dash-core": "github:BeIntrepid/dash-core@^0.0.1"
+      "dash-core": "github:beintrepid/dash-core@^0.0.3"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
