@@ -1,6 +1,6 @@
 {
   "name": "dash-component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Library for creating components",
   "jspm": {
     "main": "index",
