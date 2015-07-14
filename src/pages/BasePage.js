@@ -11,8 +11,13 @@ export class BasePage
 
     attached()
     {
+
+    }
+
+    activate(params)
+    {
         var areaLoader = ServiceLocator.services.areaLoader;
-        areaLoader.loadAreaConfiguration('IDNOTWORKINGYET').then((areaConfig)=>{
+        areaLoader.loadAreaConfiguration(params.areaId).then((areaConfig)=>{
             this.layout.path = areaConfig.areaLayout.viewModel;
             this.layout.model = areaConfig;
         });

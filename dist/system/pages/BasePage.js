@@ -17,11 +17,13 @@ System.register(['dash-core'], function (_export) {
                     this.layout = {};
                 }
 
-                BasePage.prototype.attached = function attached() {
+                BasePage.prototype.attached = function attached() {};
+
+                BasePage.prototype.activate = function activate(params) {
                     var _this = this;
 
                     var areaLoader = ServiceLocator.services.areaLoader;
-                    areaLoader.loadAreaConfiguration('IDNOTWORKINGYET').then(function (areaConfig) {
+                    areaLoader.loadAreaConfiguration(params.areaId).then(function (areaConfig) {
                         _this.layout.path = areaConfig.areaLayout.viewModel;
                         _this.layout.model = areaConfig;
                     });
